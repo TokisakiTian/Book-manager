@@ -6,7 +6,7 @@ def create_table():
     This function creates a new database "library.db" with the table "books"
     :return: None
     """
-    connection = sqlite3.connect("library.db")
+    connection = sqlite3.connect("library.json")
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -30,7 +30,7 @@ def add_element(element):
     :param element: the string in the format: title, author, year
     :return:None
     """
-    connection = sqlite3.connect("library.db")
+    connection = sqlite3.connect("library.json")
     cursor = connection.cursor()
 
     element = list(element.split(", "))
@@ -49,7 +49,7 @@ def show_table():
     This function shows the entire table "books"
     :return:None
     """
-    connection = sqlite3.connect("library.db")
+    connection = sqlite3.connect("library.json")
     cursor = connection.cursor()
 
     cursor.execute('SELECT * FROM books')
@@ -70,7 +70,7 @@ def find_a_book(title, author, year):
     :param year:int with the year of publication of the book
     :return:
     """
-    connection = sqlite3.connect("library.db")
+    connection = sqlite3.connect("library.json")
     cursor = connection.cursor()
 
     cursor.execute('SELECT * FROM books WHERE title = ? AND author = ? AND year = ?', (title, author, year))
@@ -89,7 +89,7 @@ def delete_element(id):
     :param id: the id of the book to delete
     :return:None
     """
-    connection = sqlite3.connect("library.db")
+    connection = sqlite3.connect("library.json")
     cursor = connection.cursor()
 
     cursor.execute('DELETE FROM books WHERE id = ?', (id,))
@@ -109,7 +109,7 @@ def update_status(id, status):
     :param status: the text to replace the status with
     :return:None
     """
-    connection = sqlite3.connect("library.db")
+    connection = sqlite3.connect("library.json")
     cursor = connection.cursor()
 
     cursor.execute('UPDATE books SET status = ? WHERE id = ?', (status, id))
