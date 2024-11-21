@@ -3,7 +3,7 @@ import sqlite3
 
 def create_table():
     """
-    This function creates a new database "library.db" with the table "books"
+    This function creates a new database "library.json" with the table "books"
     :return: None
     """
     connection = sqlite3.connect("library.json")
