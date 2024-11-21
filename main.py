@@ -2,6 +2,10 @@ from database import create_table, add_element, show_table, delete_element, find
 
 
 def operations():
+    """
+    This function calls other functions at the user's request
+    :return:None
+    """
     print()
     print("Введите 0, если хотите создать базу данных.")
     print("Введите 1, если хотите добавить новую книгу в базу данных.")

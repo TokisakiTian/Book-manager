@@ -2,6 +2,10 @@ import sqlite3
 
 
 def create_table():
+    """
+    This function creates a new database "library.db" with the table "books"
+    :return: None
+    """
     connection = sqlite3.connect("library.db")
     cursor = connection.cursor()
 
@@ -21,6 +25,11 @@ def create_table():
 
 
 def add_element(element):
+    """
+    This function adds a new element to the table in the format: title, author, year
+    :param element: the string in the format: title, author, year
+    :return:None
+    """
     connection = sqlite3.connect("library.db")
     cursor = connection.cursor()
 
@@ -36,6 +45,10 @@ def add_element(element):
 
 
 def show_table():
+    """
+    This function shows the entire table "books"
+    :return:None
+    """
     connection = sqlite3.connect("library.db")
     cursor = connection.cursor()
 
@@ -50,6 +63,13 @@ def show_table():
 
 
 def find_a_book(title, author, year):
+    """
+    This function finds a book in the database by its name
+    :param title:string with the title of the book
+    :param author:string with the author's name
+    :param year:int with the year of publication of the book
+    :return:
+    """
     connection = sqlite3.connect("library.db")
     cursor = connection.cursor()
 
@@ -64,6 +84,11 @@ def find_a_book(title, author, year):
 
 
 def delete_element(id):
+    """
+    This function removes an item from the database
+    :param id: the id of the book to delete
+    :return:None
+    """
     connection = sqlite3.connect("library.db")
     cursor = connection.cursor()
 
@@ -78,6 +103,12 @@ def delete_element(id):
 
 
 def update_status(id, status):
+    """
+    This function changes the status of a book by its id
+    :param id: the id of the book to change status
+    :param status: the text to replace the status with
+    :return:None
+    """
     connection = sqlite3.connect("library.db")
     cursor = connection.cursor()
 
