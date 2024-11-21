@@ -1,5 +1,6 @@
 from database import create_table, add_element, show_table, delete_element, find_a_book, update_status
 
+
 def operations():
     print()
     print("Введите 0, если хотите создать базу данных.")
@@ -51,7 +52,6 @@ def operations():
         status = input()
         update_status(id, status)
         return operations()
-
 
     if marker == 5:
         show_table()
